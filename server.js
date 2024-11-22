@@ -207,11 +207,11 @@ app.use(express.static('../public', {
     }
 }));
 
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, '/public')));
 
 // Route to serve categories.html regardless of the eventId// Route to serve categories.html dynamically
 app.get('/competitions/:eventId/categories.html', (req, res) => {
-    const categoriesFilePath = path.join(__dirname, '../public', 'competitions', 'categories.html');
+    const categoriesFilePath = path.join(__dirname, '/public', 'competitions', 'categories.html');
     res.sendFile(categoriesFilePath); // Serve the existing categories.html file
 });
 
